@@ -19,16 +19,16 @@ export interface ProductInput {
 }
 
 export interface MachineType {
-  key: string;
-  icon: string;
+  id: string;
+  category: string;
+  brand: string;
   name: string;
-  priceLabel: string;
+  shortName: string;
   price: number;
-  dailyRevenue: number;
-  stockCost: number;
-  electric: number;
-  rent: number;
-  grossMargin: number;
+  needsWater: boolean;
+  needsElectricity: boolean;
+  defaultWaterCost: number;
+  description?: string;
 }
 
 export interface ROIInput {
