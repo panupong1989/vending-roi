@@ -10,6 +10,7 @@ import {
 } from "react";
 import type { LiffProfile, LiffState } from "@/types";
 import { fetchProfile, initLiff, isInClient } from "@/lib/liff";
+import "@/lib/chartSetup";
 
 interface LiffContextValue extends LiffState {
   userId: string;
