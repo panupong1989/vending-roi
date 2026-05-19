@@ -40,6 +40,7 @@ export interface ROIInput {
   grossMargin: number;
   rent: number;
   electric: number;
+  waterCost: number;
   maintenance: number;
   transport: number;
   other: number;

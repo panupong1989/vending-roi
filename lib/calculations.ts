@@ -17,6 +17,7 @@ export function calculateROI(input: ROIInput): ROIResult {
     grossMargin,
     rent,
     electric,
+    waterCost,
     maintenance,
     transport,
     other,
@@ -29,7 +30,7 @@ export function calculateROI(input: ROIInput): ROIResult {
   const cogs = monthlyRevenue * (1 - grossMargin / 100);
   const grossProfit = monthlyRevenue - cogs;
   const monthlyExpense =
-    (rent + electric + maintenance + transport + other) * machines;
+    (rent + electric + waterCost + maintenance + transport + other) * machines;
   const ebt = grossProfit - monthlyExpense;
   const tax = ebt > 0 ? (ebt * taxRate) / 100 : 0;
   const netProfit = ebt - tax;
@@ -62,6 +63,7 @@ export function calculateScenarios(input: ROIInput): ScenarioResult[] {
   const monthlyExpense =
     (input.rent +
       input.electric +
+      input.waterCost +
       input.maintenance +
       input.transport +
       input.other) *
@@ -157,6 +159,7 @@ export function calculateScaleROIs(input: ROIInput): number[] {
     const sE =
       (input.rent +
         input.electric +
+        input.waterCost +
         input.maintenance +
         input.transport +
         input.other) *

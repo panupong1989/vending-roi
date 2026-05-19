@@ -153,25 +153,33 @@ export function InputForm({ input, onChange }: Props) {
       </div>
       <div className="mb-2 grid grid-cols-2 gap-2">
         <NumField
+          label="ค่าน้ำประปา"
+          value={input.waterCost}
+          unit="฿"
+          onChange={(n) => onChange({ waterCost: n })}
+        />
+        <NumField
           label="ค่าซ่อมบำรุง"
           value={input.maintenance}
           unit="฿"
           onChange={(n) => onChange({ maintenance: n })}
         />
+      </div>
+      <div className="mb-2 grid grid-cols-2 gap-2">
         <NumField
           label="ค่าขนส่ง"
           value={input.transport}
           unit="฿"
           onChange={(n) => onChange({ transport: n })}
         />
-      </div>
-      <div className="mb-2 grid grid-cols-2 gap-2">
         <NumField
           label="อื่นๆ"
           value={input.other}
           unit="฿"
           onChange={(n) => onChange({ other: n })}
         />
+      </div>
+      <div className="mb-2 grid grid-cols-2 gap-2">
         <NumField
           label="ภาษี (%)"
           value={input.taxRate}
@@ -180,6 +188,7 @@ export function InputForm({ input, onChange }: Props) {
           max={40}
           onChange={(n) => onChange({ taxRate: n })}
         />
+        <div />
       </div>
 
       <div className="mt-2 flex items-start gap-2 rounded-lg border border-[#b3ecdc] bg-[#f0fdf8] px-3 py-2.5 text-[11px] text-[#005e45]">

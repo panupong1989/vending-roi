@@ -195,6 +195,7 @@ export function ROICalculator({
                   <ExpensePie
                     rent={input.rent}
                     electric={input.electric}
+                    waterCost={input.waterCost}
                     maintenance={input.maintenance}
                     transport={input.transport}
                     other={input.other}

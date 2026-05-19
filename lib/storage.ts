@@ -49,7 +49,9 @@ export function loadROIInput(userId: string): ROIInput | null {
   try {
     const data = localStorage.getItem(roiKey(userId));
     if (!data) return null;
-    return JSON.parse(data) as ROIInput;
+    const parsed = JSON.parse(data) as Partial<ROIInput>;
+    if (parsed.waterCost === undefined) parsed.waterCost = 0;
+    return parsed as ROIInput;
   } catch {
     return null;
   }

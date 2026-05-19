@@ -17,6 +17,7 @@ const DEFAULT_INPUT: ROIInput = {
   grossMargin: 40,
   rent: 1500,
   electric: 600,
+  waterCost: 300,
   maintenance: 500,
   transport: 400,
   other: 300,

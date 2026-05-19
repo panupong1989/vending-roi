@@ -13,6 +13,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 interface Props {
   rent: number;
   electric: number;
+  waterCost: number;
   maintenance: number;
   transport: number;
   other: number;
@@ -22,19 +23,27 @@ interface Props {
 export function ExpensePie({
   rent,
   electric,
+  waterCost,
   maintenance,
   transport,
   other,
   machines,
 }: Props) {
   const data = {
-    labels: ["ค่าเช่า", "ค่าไฟ", "ซ่อมบำรุง", "ขนส่ง", "อื่นๆ"],
+    labels: ["ค่าเช่า", "ค่าไฟ", "ค่าน้ำประปา", "ซ่อมบำรุง", "ขนส่ง", "อื่นๆ"],
     datasets: [
       {
-        data: [rent, electric, maintenance, transport, other].map(
+        data: [rent, electric, waterCost, maintenance, transport, other].map(
           (v) => v * machines
         ),
-        backgroundColor: ["#1a2744", "#00c896", "#f7a800", "#4a6cf7", "#e74c3c"],
+        backgroundColor: [
+          "#1a2744",
+          "#00c896",
+          "#3aa8ff",
+          "#f7a800",
+          "#4a6cf7",
+          "#e74c3c",
+        ],
         borderWidth: 2,
         borderColor: "#fff",
       },

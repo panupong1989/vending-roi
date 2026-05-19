@@ -17,7 +17,10 @@ export function MachineTypePicker({ onSelect }: Props) {
     setSelectedId(id);
     const mt = getMachineById(id);
     if (!mt) return;
-    onSelect({ machinePrice: mt.price });
+    onSelect({
+      machinePrice: mt.price,
+      waterCost: mt.needsWater ? mt.defaultWaterCost : 0,
+    });
   }
 
   return (
