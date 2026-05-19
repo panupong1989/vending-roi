@@ -84,11 +84,11 @@ export function ROICalculator({
           <CardHeader
             icon="📦"
             iconBg="bg-[#e8eef9]"
-            title="เลือกประเภทตู้"
+            title="เลือกประเภทสินค้า"
             subtitle="กดเพื่อโหลดค่าเริ่มต้น"
           />
           <CardBody>
-            <MachineTypePicker onSelect={patch} />
+            <MachineTypePicker selectedId={input.machineId ?? ""} onSelect={patch} />
             {productSummary && (
               <div className="mt-3 flex items-start gap-2 rounded-lg border border-[#b3ecdc] bg-[#f0fdf8] px-3 py-2 text-[11px] text-[#005e45]">
                 <span className="mt-0.5">🔗</span>

@@ -32,6 +32,7 @@ export interface MachineType {
 }
 
 export interface ROIInput {
+  machineId?: string;
   machinePrice: number;
   installCost: number;
   stockCost: number;

@@ -9,6 +9,7 @@ import type { Product, ROIInput } from "@/types";
 import { loadProducts, loadROIInput, saveProducts, saveROIInput } from "@/lib/storage";
 
 const DEFAULT_INPUT: ROIInput = {
+  machineId: "",
   machinePrice: 45000,
   installCost: 3000,
   stockCost: 8000,
